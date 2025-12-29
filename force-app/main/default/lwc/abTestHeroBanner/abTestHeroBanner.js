@@ -204,7 +204,7 @@ export default class AbTestHeroBanner extends LightningElement {
             description: desc,
             buttonLabel: btnLabel,
             buttonUrl: this.resolveUrl(btnUrl),
-            imageStyle: `width: 100%; height: ${height}px; object-fit: cover; object-position: ${position}; border-radius: 8px;`
+            imageStyle: `width: 100%; height: ${height}px; object-fit: cover; object-position: ${position}; border-radius: 4px;`
         };
     }
 }
