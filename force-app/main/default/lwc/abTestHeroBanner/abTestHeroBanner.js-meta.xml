@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>A/B Test Hero Banner</masterLabel>
+    <description>CMS画像連携・実績計測・スタイル調整機能を備えたA/Bテスト用ヒーローバナーです。</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="testId" type="String" label="Test ID" required="true" default="Test01"
+                      description="テストを識別する一意のID" />
+            
+            <property name="previewMode" type="String" label="[Design] Preview Mode" 
+                      datasource="Auto,Force A,Force B" default="Auto" 
+                      description="ビルダーでの表示確認用です。本番公開時は必ず'Auto'にしてください。" />
+            
+            <property name="imageHeight" type="Integer" label="Image Height (px)" default="400"
+                      description="画像の表示高さを指定します。" />
+
+            <property name="variantA_ImageContent" type="ContentReference" label="[A] CMS Image" />
+            <property name="variantA_ImagePosition" type="String" label="[A] Image Position" default="center" datasource="top,center,bottom" />
+            <property name="variantA_Title" type="String" label="[A] Title" />
+            <property name="variantA_Description" type="String" label="[A] Description" />
+            <property name="variantA_ButtonLabel" type="String" label="[A] Button Label" />
+            <property name="variantA_ButtonUrl" type="String" label="[A] Button Link" />
+
+            <property name="variantB_ImageContent" type="ContentReference" label="[B] CMS Image" />
+            <property name="variantB_ImagePosition" type="String" label="[B] Image Position" default="center" datasource="top,center,bottom" />
+            <property name="variantB_Title" type="String" label="[B] Title" />
+            <property name="variantB_Description" type="String" label="[B] Description" />
+            <property name="variantB_ButtonLabel" type="String" label="[B] Button Label" />
+            <property name="variantB_ButtonUrl" type="String" label="[B] Button Link" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

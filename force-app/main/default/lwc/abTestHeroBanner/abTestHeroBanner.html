@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-box slds-theme_default slds-p-around_medium">
+        
+        <div class="slds-m-bottom_medium">
+            <template lwc:if={currentData.imageUrl}>
+                <img src={currentData.imageUrl} 
+                     alt={currentData.altText} 
+                     style={currentData.imageStyle} />
+            </template>
+            <template lwc:else>
+                <div class="slds-illustration slds-illustration_small" style="height: 200px;">
+                    <div class="slds-text-color_weak">読み込み中...</div>
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-text-align_center">
+            <h2 class="slds-text-heading_large slds-m-bottom_small">
+                {currentData.title}
+            </h2>
+            <p class="slds-text-body_regular slds-m-bottom_medium">
+                {currentData.description}
+            </p>
+
+            <a href={currentData.buttonUrl} 
+               class="slds-button slds-button_brand"
+               onclick={handleButtonClick}>
+                {currentData.buttonLabel}
+            </a>
+        </div>
+    </div>
+</template>
